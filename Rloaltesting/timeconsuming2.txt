@@ -1,0 +1,112 @@
+Time is :642
+Time is :510
+Time is :744
+Time is :591
+Time is :518
+Time is :585
+                                      
+We run services for  :6  times.
+Average time for each call is   :598  Mill-seconds.
+Max time for all calls is   :744 Mill-seconds.
+Min time for all calls is   :510 Mill-seconds.
+Test with 2000 + input.
+Time is :500   this is case:  1   
+Time is :592   this is case:  2   
+Time is :703   this is case:  3   
+Time is :527   this is case:  4   
+Time is :532   this is case:  5     in line:5      Error in Prob :  expected: 0.840066664  the url link is http://localhost:8080/getmax?input={"mds_cd":"WASHERDD","state_cd":"OH","model_source":"110","model_chassis":"Top%20Load","model_drivetype":"Motor%20Coupler","model_steam":"Non%20Steam","model_he":"Non%20HE","model_controltype":"Timer","mol":"66","date":"2014-07-28","Normalized_Symptom":"starting%20or%20stopping.not%20starting;cycles;starting%20or%20stopping.stopping%20unexpectedly"}
+Time is :693   this is case:  6     in line:6      Error in Prob :  expected: 0.572572701  the url link is http://localhost:8080/getmax?input={"mds_cd":"WASHERFL","state_cd":"OH","model_source":"417","model_chassis":"Front%20Load","model_drivetype":"Belt","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"70","date":"2014-11-13","Normalized_Symptom":"starting%20or%20stopping.not%20starting;cycles;starting%20or%20stopping.stopping%20unexpectedly"}
+Time is :509   this is case:  7   
+Time is :681   this is case:  8   
+Time is :614   this is case:  9   
+Time is :518   this is case:  10     in line:10      Error in Prob :  expected: 0.37319613  the url link is http://localhost:8080/getmax?input={"mds_cd":"WASHERDD","state_cd":"DC","model_source":"363","model_chassis":"Top%20Load","model_drivetype":"Motor%20Coupler","model_steam":"Non%20Steam","model_he":"Non%20HE","model_controltype":"Timer","mol":"66","date":"2014-07-22","Normalized_Symptom":"starting%20or%20stopping.not%20starting;cycles;starting%20or%20stopping.stopping%20unexpectedly"}
+Time is :486   this is case:  11   
+Time is :707   this is case:  12   
+Time is :622   this is case:  13   
+Time is :611   this is case:  14   
+Time is :614   this is case:  15   
+Time is :590   this is case:  16   
+Time is :594   this is case:  17   
+Time is :663   this is case:  18   
+Time is :621   this is case:  19   
+Time is :616   this is case:  20   
+Time is :599   this is case:  21   
+Time is :638   this is case:  22   
+Time is :604   this is case:  23   
+Time is :585   this is case:  24   
+Time is :610   this is case:  25   
+Time is :592   this is case:  26   
+Time is :514   this is case:  27   
+Time is :733   this is case:  28   
+Time is :530   this is case:  29   
+Time is :513   this is case:  30   
+Time is :623   this is case:  31     in line:31      Error in Prob :  expected:  1  the url link is http://localhost:8080/getmax?input={"mds_cd":"other","state_cd":"VT","model_source":"417","model_chassis":"Front%20Load","model_drivetype":"Belt","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"54","date":"2014-07-09","Normalized_Symptom":"error%20codes.loc"}
+Time is :621   this is case:  32   
+Time is :576   this is case:  33   
+Time is :688   this is case:  34   
+Time is :623   this is case:  35   
+Time is :526   this is case:  36   
+Time is :529   this is case:  37   
+Time is :613   this is case:  38   
+Time is :615   this is case:  39   
+Time is :488   this is case:  40   
+Time is :603   this is case:  41   
+Time is :506   this is case:  42     in line:42      Error in Prob :  expected: 0.870922758  the url link is http://localhost:8080/getmax?input={"mds_cd":"other","state_cd":"GA","model_source":"110","model_chassis":"Top%20Load","model_drivetype":"Motor%20Coupler","model_steam":"Non%20Steam","model_he":"Non%20HE","model_controltype":"Timer","mol":"102","date":"2014-09-13","Normalized_Symptom":"filling;starting%20or%20stopping.stopping%20unexpectedly"}
+Time is :604   this is case:  43   
+Time is :593   this is case:  44   
+Time is :591   this is case:  45     in line:45      Error in Prob :  expected: 0.350865269  the url link is http://localhost:8080/getmax?input={"mds_cd":"WASHTOP1YR3","state_cd":"AZ","model_source":"110","model_chassis":"Top%20Load","model_drivetype":"Rotor%20Stator","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"31","date":"2014-06-02","Normalized_Symptom":"leaking%20(water%20or%20additives).bottom;leaking%20(water%20or%20additives).water"}
+Time is :665   this is case:  46   
+Time is :603   this is case:  47   
+Time is :521   this is case:  48   
+Time is :610   this is case:  49   
+Time is :665   this is case:  50   
+Time is :534   this is case:  51   
+Time is :499   this is case:  52   
+Time is :606   this is case:  53   
+Time is :503   this is case:  54   
+Time is :717   this is case:  55   
+Time is :538   this is case:  56   
+Time is :709   this is case:  57   
+Time is :641   this is case:  58   
+Time is :593   this is case:  59   
+Time is :496   this is case:  60   
+Time is :858   this is case:  61   
+Time is :571   this is case:  62   
+Time is :607   this is case:  63     in line:63      Error in Prob :  expected: 0.432182578  the url link is http://localhost:8080/getmax?input={"mds_cd":"WASHERFL","state_cd":"TX","model_source":"110","model_chassis":"Front%20Load","model_drivetype":"Belt","model_steam":"Steam","model_he":"HE","model_controltype":"Electronic","mol":"87","date":"2014-06-19","Normalized_Symptom":"starting%20or%20stopping.not%20starting;cycles;starting%20or%20stopping.stopping%20unexpectedly"}
+Time is :577   this is case:  64   
+Time is :587   this is case:  65   
+Time is :616   this is case:  66   
+Time is :598   this is case:  67   
+Time is :580   this is case:  68   
+Time is :663   this is case:  69   
+Time is :590   this is case:  70   
+Time is :580   this is case:  71     in line:71      Error in Prob :  expected: 0.753870025  the url link is http://localhost:8080/getmax?input={"mds_cd":"WASHER","state_cd":"OH","model_source":"363","model_chassis":"Top%20Load","model_drivetype":"Belt","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"53","date":"2014-08-11","Normalized_Symptom":"vibration;noise.rattling;noise.clicking"}
+Time is :669   this is case:  72   
+Time is :606   this is case:  73   
+Time is :581   this is case:  74     in line:74      Error in Prob :  expected: 0.398089844  the url link is http://localhost:8080/getmax?input={"mds_cd":"WASHERDD","state_cd":"TX","model_source":"110","model_chassis":"Top%20Load","model_drivetype":"Rotor%20Stator","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"67","date":"2014-08-30","Normalized_Symptom":"error%20codes.1h;error%20codes.ie"}
+Time is :686   this is case:  75   
+Time is :481   this is case:  76   
+Time is :694   this is case:  77   
+Time is :658   this is case:  78     in line:78      Error in Prob :  expected: 0.554499491  the url link is http://localhost:8080/getmax?input={"mds_cd":"WASHERDD","state_cd":"OR","model_source":"110","model_chassis":"Top%20Load","model_drivetype":"Rotor%20Stator","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"70","date":"2014-11-09","Normalized_Symptom":"starting%20or%20stopping.not%20starting;cycles;starting%20or%20stopping.stopping%20unexpectedly"}
+Time is :621   this is case:  79   
+Time is :555   this is case:  80     in line:80      Error in Prob :  expected: 0.941097261  the url link is http://localhost:8080/getmax?input={"mds_cd":"WASHERDD","state_cd":"PA","model_source":"401","model_chassis":"Top%20Load","model_drivetype":"Rotor%20Stator","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"17","date":"2014-02-28","Normalized_Symptom":"draining.not%20working%20at%20all;error%20codes.2e;error%20codes.1h"}
+Time is :493   this is case:  81   
+Time is :515   this is case:  82   
+Time is :503   this is case:  83   
+Time is :606   this is case:  84   
+Time is :612   this is case:  85   
+Time is :518   this is case:  86   
+Time is :627   this is case:  87   
+Time is :527   this is case:  88   
+Time is :700   this is case:  89   
+Time is :506   this is case:  90   
+Time is :509   this is case:  91   
+Time is :594   this is case:  92   
+Time is :534   this is case:  93     in line:93      Error in Prob :  expected:  1  the url link is http://localhost:8080/getmax?input={"mds_cd":"WASHERDD","state_cd":"CA","model_source":"110","model_chassis":"Front%20Load","model_drivetype":"Belt","model_steam":"Steam","model_he":"HE","model_controltype":"Electronic","mol":"155","date":"2014-12-01","Normalized_Symptom":"error%20codes.f54"}
+Time is :699   this is case:  94   
+Time is :501   this is case:  95   
+Time is :589   this is case:  96   
+Time is :545   this is case:  97     in line:97    Error in parts :  expected:  Drain Hose  in line:97      Error in Prob :  expected: 0.508250978  the url link is http://localhost:8080/getmax?input={"mds_cd":"WASHERDD","state_cd":"KS","model_source":"401","model_chassis":"Top%20Load","model_drivetype":"Rotor%20Stator","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"1","date":"2014-11-28","Normalized_Symptom":"leaking%20(water%20or%20additives).bottom;leaking%20(water%20or%20additives).water.bottom;error%20codes.2e;error%20codes.1h"}
+Time is :511   this is case:  98     in line:98    Error in parts :  expected:  Bearing Kit  in line:98      Error in Prob :  expected: 0.990957904  the url link is http://localhost:8080/getmax?input={"mds_cd":"WASHTOP1YR4","state_cd":"KS","model_source":"110","model_chassis":"Top%20Load","model_drivetype":"Rotor%20Stator","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"37","date":"2014-12-08","Normalized_Symptom":"noise.during%20spin;noise.roaring\/jet;noise.spin%20cycle;spinning;noise.grinding;noise.rubbing\/squeaking"}
+Time is :606   this is case:  99   
+we run 100 cases, failed 16 cases.
