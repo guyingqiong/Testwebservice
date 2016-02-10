@@ -8,12 +8,52 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.Authenticator;
 import java.net.HttpURLConnection;
+import java.net.InetAddress;
 import java.net.MalformedURLException;
+import java.net.PasswordAuthentication;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.Enumeration;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.RejectedExecutionHandler;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.ThreadPoolExecutor;
+
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+
+
+
+
+
+
+
+
+
+import com.ning.http.client.*;
+
+import java.util.concurrent.Future;
+
+
+
 
 
 
@@ -36,8 +76,16 @@ import org.codehaus.jettison.json.JSONObject;
 
 public class Localtest {
 
+	//inject this
+	//RejectedExecutionHandler implementation
+	 // RejectedExecutionHandler rejectionHandler = new RejectedExecutionHandler();
+	//Get the ThreadFactory implementation to use
+	 ThreadFactory threadFactory = Executors.defaultThreadFactory();
+	//creating the ThreadPoolExecutor
+	// ThreadPoolExecutor executorPool = new ThreadPoolExecutor(2, 4, 10, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(2), threadFactory, rejectionHandler);
+   // private static ThreadPoolExecutor executor = new ThreadPoolExecutor();
 	 //private static //Rengine re = new Rengine(new String[] { "--vanilla" }, false, null);
-	public static void main(String[] args) throws JSONException, IOException {
+	public static void main(String[] args) throws JSONException, IOException, InterruptedException, ExecutionException {
 		
 		   long lStartTime = System.currentTimeMillis();
             Rengine re = new Rengine(new String[] { "--vanilla" }, false, null);
@@ -60,6 +108,13 @@ public class Localtest {
              //re.eval(first3);
             String first4 ="library(gRain)";
              re.eval(first4);
+             
+             Boolean flag = true;
+             if(flag == true){
+            	 parallel_request();
+            	 
+            	 return;
+             }
              
              
              String fifth ="i=1";
@@ -123,7 +178,7 @@ public class Localtest {
             String temp2=temp1.replace("]", "");
             String temp3=temp2.replaceAll(" ", "%20");
             String temp4=temp3.replaceAll("/", "\\/");
-         	String url1 = "http://localhost:8080/getmax?input="+temp4;
+         	String url1 = "http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input="+temp4;
          	System.out.println(" string is "  + url1);
           
          	URL url = new URL(url1);
@@ -132,8 +187,12 @@ public class Localtest {
     		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
     		conn.setRequestMethod("GET");
     		conn.setRequestProperty("Accept", "application/json");
+    		String userpass = "bnuser" + ":" + "bnpass";
+    		@SuppressWarnings("restriction")
+			String encoding = new sun.misc.BASE64Encoder().encode(userpass.getBytes());
+    		conn.setRequestProperty("Authorization", "Basic " + encoding);
 
-    		if (conn.getResponseCode() != 200) {
+    		if (conn.getResponseCode() != 200 && conn.getResponseCode() != 401) {
     			throw new RuntimeException("Failed : HTTP error code : "
     					+ conn.getResponseCode());
     		}
@@ -186,7 +245,7 @@ public class Localtest {
             String temp22=temp21.replace("]", "");
             String temp23=temp22.replaceAll(" ", "%20");
             String temp24=temp23.replaceAll("/", "\\/");
-         	String url21 = "http://localhost:8080/getmax?input="+temp24;
+         	String url21 = "http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input="+temp24;
          	System.out.println(" string is "  + url21);
           
          	URL url2 = new URL(url21);
@@ -196,7 +255,10 @@ public class Localtest {
     		conn2.setRequestMethod("GET");
     		conn2.setRequestProperty("Accept", "application/json");
 
-    		if (conn2.getResponseCode() != 200) {
+    		 
+    		conn2.setRequestProperty("Authorization", "Basic " + encoding);
+
+    		if (conn2.getResponseCode() != 200 && conn2.getResponseCode() != 401) {
     			throw new RuntimeException("Failed : HTTP error code : "
     					+ conn2.getResponseCode());
     		}
@@ -250,7 +312,7 @@ public class Localtest {
             String temp32=temp31.replace("]", "");
             String temp33=temp32.replaceAll(" ", "%20");
             String temp34=temp33.replaceAll("/", "\\/");
-         	String url31 = "http://localhost:8080/getmax?input="+temp34;
+         	String url31 = "http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input="+temp34;
          	System.out.println(" string is "  + url31);
           
          	URL url3 = new URL(url31);
@@ -260,7 +322,10 @@ public class Localtest {
     		conn3.setRequestMethod("GET");
     		conn3.setRequestProperty("Accept", "application/json");
 
-    		if (conn3.getResponseCode() != 200) {
+    		 
+    		conn3.setRequestProperty("Authorization", "Basic " + encoding);
+
+    		if (conn3.getResponseCode() != 200 && conn3.getResponseCode() != 401) {
     			throw new RuntimeException("Failed : HTTP error code : "
     					+ conn3.getResponseCode());
     		}
@@ -312,7 +377,7 @@ public class Localtest {
             String temp42=temp41.replace("]", "");
             String temp43=temp42.replaceAll(" ", "%20");
             String temp44=temp43.replaceAll("/", "\\/");
-         	String url41 = "http://localhost:8080/getmax?input="+temp44;
+         	String url41 = "http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input="+temp44;
          	System.out.println(" string is "  + url41);
           
          	URL url4 = new URL(url41);
@@ -322,7 +387,10 @@ public class Localtest {
     		conn4.setRequestMethod("GET");
     		conn4.setRequestProperty("Accept", "application/json");
 
-    		if (conn4.getResponseCode() != 200) {
+    		 
+    		conn4.setRequestProperty("Authorization", "Basic " + encoding);
+
+    		if (conn4.getResponseCode() != 200 && conn4.getResponseCode() != 401) {
     			throw new RuntimeException("Failed : HTTP error code : "
     					+ conn4.getResponseCode());
     		}
@@ -375,7 +443,7 @@ public class Localtest {
             String temp52=temp51.replace("]", "");
             String temp53=temp52.replaceAll(" ", "%20");
             String temp54=temp53.replaceAll("/", "\\/");
-         	String url51 = "http://localhost:8080/getmax?input="+temp54;
+         	String url51 = "http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input="+temp54;
          	System.out.println(" string is "  + url51);
           
          	URL url5 = new URL(url51);
@@ -385,7 +453,10 @@ public class Localtest {
     		conn5.setRequestMethod("GET");
     		conn5.setRequestProperty("Accept", "application/json");
 
-    		if (conn5.getResponseCode() != 200) {
+    		 
+    		conn5.setRequestProperty("Authorization", "Basic " + encoding);
+
+    		if (conn5.getResponseCode() != 200 && conn5.getResponseCode() != 401) {
     			throw new RuntimeException("Failed : HTTP error code : "
     					+ conn5.getResponseCode());
     		}
@@ -438,7 +509,7 @@ public class Localtest {
             String temp62=temp61.replace("]", "");
             String temp63=temp62.replaceAll(" ", "%20");
             String temp64=temp63.replaceAll("/", "\\/");
-         	String url61 = "http://localhost:8080/getmax?input="+temp64;
+         	String url61 = "http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input="+temp64;
          	System.out.println(" string is "  + url61);
           
          	URL url6 = new URL(url61);
@@ -448,7 +519,10 @@ public class Localtest {
     		conn6.setRequestMethod("GET");
     		conn6.setRequestProperty("Accept", "application/json");
 
-    		if (conn6.getResponseCode() != 200) {
+    		 
+    		conn6.setRequestProperty("Authorization", "Basic " + encoding);
+
+    		if (conn6.getResponseCode() != 200 && conn6.getResponseCode() != 401) {
     			throw new RuntimeException("Failed : HTTP error code : "
     					+ conn6.getResponseCode());
     		}
@@ -539,7 +613,7 @@ public class Localtest {
 	            String temp62=temp61.replace("]", "");
 	            String temp63=temp62.replaceAll(" ", "%20");
 	            String temp64=temp63.replaceAll("/", "\\/");
-	         	String url61 = "http://localhost:8080/getmax?input="+temp64;
+	         	String url61 = "http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input="+temp64;
 	         	System.out.println(" string is "  + url61);
 	          
 	         	URL url6 = new URL(url61);
@@ -549,7 +623,12 @@ public class Localtest {
 	    		conn6.setRequestMethod("GET");
 	    		conn6.setRequestProperty("Accept", "application/json");
 
-	    		if (conn6.getResponseCode() != 200) {
+	    		String userpass = "bnuser" + ":" + "bnpass";
+	    		@SuppressWarnings("restriction")
+				String encoding = new sun.misc.BASE64Encoder().encode(userpass.getBytes());
+	    		conn6.setRequestProperty("Authorization", "Basic " + encoding);
+
+	    		if (conn6.getResponseCode() != 200 && conn6.getResponseCode() != 401) {
 	    			throw new RuntimeException("Failed : HTTP error code : "
 	    					+ conn6.getResponseCode());
 	    		}
@@ -614,4 +693,140 @@ public class Localtest {
 			probfile.close();
 			bw.close();
 }
+	
+	public static void parallel_request() throws InterruptedException, ExecutionException, IOException{
+		
+		
+
+		// Have one (or more) threads ready to do the async tasks. Do this during startup of your app.
+		ExecutorService executor = Executors.newFixedThreadPool(10); 
+		String userpass = "bnuser" + ":" + "bnpass";
+		@SuppressWarnings("restriction")
+		String encoding = new sun.misc.BASE64Encoder().encode(userpass.getBytes());
+		// Sets the authenticator that will be used by the networking code
+		   // when a proxy or an HTTP server asks for authentication.
+		  Authenticator.setDefault(new CustomAuthenticator());
+		// Fire a request.
+		long lStartTime6 = System.currentTimeMillis();
+      
+     	Future<Response> response1 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response2 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response3 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response4 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response5 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response6 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response7 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response8 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response9 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response10 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+    	Future<Response> response11 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response12 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response13 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response14 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response15 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response16 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response17 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response18 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response19 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+     	Future<Response> response20 = executor.submit(new Request(new URL("http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={%22mds_cd%22:%22%22,%22state_cd%22:%22CC%22,%22model_source%22:%22401%22,%22model_chassis%22:%22Top%20Load%22,%22model_drivetype%22:%22Rotor%20Stator%22,%22model_steam%22:%22Non%20Steam%22,%22model_he%22:%22HE%22,%22model_controltype%22:%22Electronic%22,%22mol%22:%221%22,%22date%22:%222014-11-28%22,%22Normalized_Symptom%22:%22leaking%20%28water%20or%20additives%29.bottom;leaking%20%28water%20or%20additives%29.water.bottom;error%20codes.2e;error%20codes.1h%22}")));
+
+		// Do your other tasks here (will be processed immediately, current thread won't block).
+		// ...
+
+		
+		
+		// Get the response (here the current thread will block until response is returned).
+		InputStream body1 = response1.get().getBody(1);
+		InputStream body2 = response2.get().getBody(2);
+		InputStream body3 = response3.get().getBody(3);
+		InputStream body4 = response4.get().getBody(4);
+		InputStream body5 = response5.get().getBody(5);
+		InputStream body6 = response6.get().getBody(6);
+		InputStream body7 = response7.get().getBody(7);
+		InputStream body8 = response8.get().getBody(8);
+		InputStream body9 = response9.get().getBody(9);
+		InputStream body10 = response10.get().getBody(10);
+		InputStream body11 = response11.get().getBody(11);
+		InputStream body12 = response12.get().getBody(12);
+		InputStream body13 = response13.get().getBody(13);
+		InputStream body14 = response14.get().getBody(14);
+		InputStream body15 = response15.get().getBody(15);
+		InputStream body16 = response16.get().getBody(16);
+		InputStream body17 = response17.get().getBody(17);
+		InputStream body18 = response18.get().getBody(18);
+		InputStream body19 = response19.get().getBody(19);
+		InputStream body20 = response20.get().getBody(20);
+		// ...
+
+		long lEndTime6 = System.currentTimeMillis();
+        long difference6 = lEndTime6 - lStartTime6;
+        System.out.println("Elapsed milliseconds: " + difference6);
+        
+		// Shutdown the threads during shutdown of your app.
+		executor.shutdown();
+		return;
+	}
+	
+	
+
+	
+	//abstraction to wrap Callable and Future
+    class GetRequestTask {
+        private GetRequestWork work;
+        private FutureTask<String> task;
+        public GetRequestTask(String url, Executor executor) {
+            this.work = new GetRequestWork(url);
+            this.task = new FutureTask<String>(work);
+            executor.execute(this.task);
+        }
+        public String getRequest() {
+            return this.work.getUrl();
+        }
+        public boolean isDone() {
+            return this.task.isDone();
+        }
+        public String getResponse() {
+            try {
+                return this.task.get();
+            } catch(Exception e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    //Callable representing actual HTTP GET request
+    class GetRequestWork implements Callable<String> {
+        private final String url;
+        public GetRequestWork(String url) {
+            this.url = url;
+        }
+        public String getUrl() {
+            return this.url;
+        }
+        public String call() throws Exception {
+            return new DefaultHttpClient().execute(new HttpGet(getUrl()), new BasicResponseHandler());
+        }
+    }
+    
+    
+    public static class CustomAuthenticator extends Authenticator {
+  	  
+ 	   // Called when password authorization is needed
+ 	  protected PasswordAuthentication getPasswordAuthentication() {
+ 	   
+ 	     // Get information about the request
+ 	   String prompt = getRequestingPrompt();
+ 	  String hostname = getRequestingHost();
+ 	  InetAddress ipaddr = getRequestingSite();
+ 	 int port = getRequestingPort();
+ 	
+            String username = "bnuser";
+ 	            String password = "bnpass";
+ 	
+ 	       // Return the information (a data holder that is used by Authenticator)
+ 	         return new PasswordAuthentication(username, password.toCharArray());
+ 	           
+ 	      }
+ 	         
+ 	    }
 }

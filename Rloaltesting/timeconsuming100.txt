@@ -1,0 +1,112 @@
+Time is :1999
+Time is :1735
+Time is :1435
+Time is :6247
+Time is :1156
+Time is :1301
+                                      
+We run services for  :6  times.
+Average time for each call is   :2312  Mill-seconds.
+Max time for all calls is   :6247 Mill-seconds.
+Min time for all calls is   :1156 Mill-seconds.
+Test with 2000 + input.
+Time is :1228   this is case:  1   
+Time is :1229   this is case:  2   
+Time is :1024   this is case:  3   
+Time is :1228   this is case:  4   
+Time is :1537   this is case:  5     in line:5      Error in Prob :  expected: 0.840066664  the url link is http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={"mds_cd":"WASHERDD","state_cd":"OH","model_source":"110","model_chassis":"Top%20Load","model_drivetype":"Motor%20Coupler","model_steam":"Non%20Steam","model_he":"Non%20HE","model_controltype":"Timer","mol":"66","date":"2014-07-28","Normalized_Symptom":"starting%20or%20stopping.not%20starting;cycles;starting%20or%20stopping.stopping%20unexpectedly"}
+Time is :1433   this is case:  6     in line:6      Error in Prob :  expected: 0.572572701  the url link is http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={"mds_cd":"WASHERFL","state_cd":"OH","model_source":"417","model_chassis":"Front%20Load","model_drivetype":"Belt","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"70","date":"2014-11-13","Normalized_Symptom":"starting%20or%20stopping.not%20starting;cycles;starting%20or%20stopping.stopping%20unexpectedly"}
+Time is :1228   this is case:  7   
+Time is :1230   this is case:  8   
+Time is :1111   this is case:  9   
+Time is :1244   this is case:  10     in line:10      Error in Prob :  expected: 0.37319613  the url link is http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={"mds_cd":"WASHERDD","state_cd":"DC","model_source":"363","model_chassis":"Top%20Load","model_drivetype":"Motor%20Coupler","model_steam":"Non%20Steam","model_he":"Non%20HE","model_controltype":"Timer","mol":"66","date":"2014-07-22","Normalized_Symptom":"starting%20or%20stopping.not%20starting;cycles;starting%20or%20stopping.stopping%20unexpectedly"}
+Time is :1230   this is case:  11   
+Time is :1228   this is case:  12   
+Time is :1024   this is case:  13   
+Time is :999   this is case:  14   
+Time is :1151   this is case:  15   
+Time is :2561   this is case:  16   
+Time is :1126   this is case:  17   
+Time is :1025   this is case:  18   
+Time is :1079   this is case:  19   
+Time is :1275   this is case:  20   
+Time is :1024   this is case:  21   
+Time is :1024   this is case:  22   
+Time is :1228   this is case:  23   
+Time is :1102   this is case:  24   
+Time is :1153   this is case:  25   
+Time is :1128   this is case:  26   
+Time is :1123   this is case:  27   
+Time is :1025   this is case:  28   
+Time is :1331   this is case:  29   
+Time is :1023   this is case:  30   
+Time is :1024   this is case:  31   
+Time is :1126   this is case:  32   
+Time is :1126   this is case:  33   
+Time is :1127   this is case:  34   
+Time is :1126   this is case:  35   
+Time is :1078   this is case:  36   
+Time is :969   this is case:  37   
+Time is :1024   this is case:  38   
+Time is :1127   this is case:  39   
+Time is :1639   this is case:  40   
+Time is :1536   this is case:  41   
+Time is :1228   this is case:  42   
+Time is :958   this is case:  43   
+Time is :1090   this is case:  44   
+Time is :1126   this is case:  45     in line:45      Error in Prob :  expected: 0.350865269  the url link is http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={"mds_cd":"WASHTOP1YR3","state_cd":"AZ","model_source":"110","model_chassis":"Top%20Load","model_drivetype":"Rotor%20Stator","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"31","date":"2014-06-02","Normalized_Symptom":"leaking%20(water%20or%20additives).bottom;leaking%20(water%20or%20additives).water"}
+Time is :1094   this is case:  46   
+Time is :1158   this is case:  47   
+Time is :1126   this is case:  48   
+Time is :1222   this is case:  49   
+Time is :1441   this is case:  50   
+Time is :1229   this is case:  51   
+Time is :1219   this is case:  52   
+Time is :1546   this is case:  53   
+Time is :1228   this is case:  54   
+Time is :1024   this is case:  55   
+Time is :1223   this is case:  56   
+Time is :1030   this is case:  57   
+Time is :1332   this is case:  58   
+Time is :1228   this is case:  59   
+Time is :1126   this is case:  60   
+Time is :984   this is case:  61   
+Time is :1371   this is case:  62   
+Time is :1127   this is case:  63     in line:63      Error in Prob :  expected: 0.432182578  the url link is http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={"mds_cd":"WASHERFL","state_cd":"TX","model_source":"110","model_chassis":"Front%20Load","model_drivetype":"Belt","model_steam":"Steam","model_he":"HE","model_controltype":"Electronic","mol":"87","date":"2014-06-19","Normalized_Symptom":"starting%20or%20stopping.not%20starting;cycles;starting%20or%20stopping.stopping%20unexpectedly"}
+Time is :1126   this is case:  64   
+Time is :1127   this is case:  65   
+Time is :1227   this is case:  66   
+Time is :1538   this is case:  67   
+Time is :1945   this is case:  68   
+Time is :1126   this is case:  69   
+Time is :1426   this is case:  70   
+Time is :1135   this is case:  71     in line:71      Error in Prob :  expected: 0.753870025  the url link is http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={"mds_cd":"WASHER","state_cd":"OH","model_source":"363","model_chassis":"Top%20Load","model_drivetype":"Belt","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"53","date":"2014-08-11","Normalized_Symptom":"vibration;noise.rattling;noise.clicking"}
+Time is :1331   this is case:  72   
+Time is :1229   this is case:  73   
+Time is :1229   this is case:  74     in line:74      Error in Prob :  expected: 0.398089844  the url link is http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={"mds_cd":"WASHERDD","state_cd":"TX","model_source":"110","model_chassis":"Top%20Load","model_drivetype":"Rotor%20Stator","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"67","date":"2014-08-30","Normalized_Symptom":"error%20codes.1h;error%20codes.ie"}
+Time is :1126   this is case:  75   
+Time is :1127   this is case:  76   
+Time is :937   this is case:  77   
+Time is :1008   this is case:  78     in line:78      Error in Prob :  expected: 0.554499491  the url link is http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={"mds_cd":"WASHERDD","state_cd":"OR","model_source":"110","model_chassis":"Top%20Load","model_drivetype":"Rotor%20Stator","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"70","date":"2014-11-09","Normalized_Symptom":"starting%20or%20stopping.not%20starting;cycles;starting%20or%20stopping.stopping%20unexpectedly"}
+Time is :1023   this is case:  79   
+Time is :1025   this is case:  80     in line:80      Error in Prob :  expected: 0.941097261  the url link is http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={"mds_cd":"WASHERDD","state_cd":"PA","model_source":"401","model_chassis":"Top%20Load","model_drivetype":"Rotor%20Stator","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"17","date":"2014-02-28","Normalized_Symptom":"draining.not%20working%20at%20all;error%20codes.2e;error%20codes.1h"}
+Time is :1843   this is case:  81   
+Time is :5324   this is case:  82   
+Time is :1229   this is case:  83   
+Time is :1023   this is case:  84   
+Time is :1025   this is case:  85   
+Time is :1126   this is case:  86   
+Time is :1130   this is case:  87   
+Time is :1225   this is case:  88   
+Time is :1536   this is case:  89   
+Time is :1127   this is case:  90   
+Time is :1023   this is case:  91   
+Time is :1229   this is case:  92   
+Time is :1125   this is case:  93   
+Time is :1026   this is case:  94   
+Time is :1126   this is case:  95   
+Time is :1024   this is case:  96   
+Time is :1229   this is case:  97     in line:97    Error in parts :  expected:  Drain Hose  in line:97      Error in Prob :  expected: 0.508250978  the url link is http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={"mds_cd":"WASHERDD","state_cd":"KS","model_source":"401","model_chassis":"Top%20Load","model_drivetype":"Rotor%20Stator","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"1","date":"2014-11-28","Normalized_Symptom":"leaking%20(water%20or%20additives).bottom;leaking%20(water%20or%20additives).water.bottom;error%20codes.2e;error%20codes.1h"}
+Time is :1228   this is case:  98     in line:98    Error in parts :  expected:  Bearing Kit  in line:98      Error in Prob :  expected: 0.990957904  the url link is http://washerpartpredict-stage-xkjhb5smyv.elasticbeanstalk.com/getmax?input={"mds_cd":"WASHTOP1YR4","state_cd":"KS","model_source":"110","model_chassis":"Top%20Load","model_drivetype":"Rotor%20Stator","model_steam":"Non%20Steam","model_he":"HE","model_controltype":"Electronic","mol":"37","date":"2014-12-08","Normalized_Symptom":"noise.during%20spin;noise.roaring\/jet;noise.spin%20cycle;spinning;noise.grinding;noise.rubbing\/squeaking"}
+Time is :1127   this is case:  99   
+we run 100 cases, failed 13 cases.

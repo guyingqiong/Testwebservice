@@ -24,6 +24,42 @@
 	            <artifactId>jersey-json</artifactId>
             <version>1.9</version>
 	        </dependency>
+	        <dependency>
+      <groupId>org.nuiton.thirdparty</groupId>
+      <artifactId>JRI</artifactId>
+      <version>RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.rosuda.REngine</groupId>
+      <artifactId>REngine</artifactId>
+      <version>RELEASE</version>
+    </dependency>
+    <dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-core</artifactId>
+	<version>4.2.4.RELEASE</version>
+</dependency>
+<dependency>
+	<groupId>org.apache.httpcomponents</groupId>
+	<artifactId>httpclient</artifactId>
+	<version>4.5.1</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-context</artifactId>
+	<version>4.2.4.RELEASE</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-web</artifactId>
+	<version>4.2.4.RELEASE</version>
+</dependency>
+
+<dependency>
+  <groupId>com.ning</groupId>
+  <artifactId>async-http-client</artifactId>
+  <version>1.9.33</version>
+</dependency>
     </dependencies>
   <build>
     <sourceDirectory>src</sourceDirectory>
